@@ -8,16 +8,18 @@ function install_depends() {
     printf "#%.0s" {1..60}
     echo 
 
-    apt install -y p7zip-full p7zip-rar libdigest-sha-perl wget curl git rpm libfuse2 lsb-release
+    apt install -y p7zip-full p7zip-rar libdigest-sha-perl wget curl git rpm libfuse2 lsb-release libatomic1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1 libnss3
 
     arch=$(uname -m)
     echo "arch=$arch"
+
     # wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-${arch}.AppImage -O appimagetool
     #   if [ "$?" -ne 0 ]; then
     #     >&2 echo -e "\033[1;31mDownload Failed, please check your network!\033[0m"
     # fi
     # chmod +x appimagetool
     # mv appimagetool /usr/local/bin/
+
     echo
     appimagetool --version
     echo
